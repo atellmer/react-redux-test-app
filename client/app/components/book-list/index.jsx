@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import style from './book-list';
+
 class BookList extends Component {
 
 	selectBookHandler(selectedBook) {
@@ -9,10 +11,10 @@ class BookList extends Component {
 	renderList() {
 		return this.props.books.map((book) => {
 			return (
-				<li 
-					key={book.title} 
-					onClick={this.selectBookHandler.bind(this, book)}
-					className="list-group-item">{book.title}
+				<li
+					key={book.title}
+					onClick={this.selectBookHandler.bind(this, book) }
+					className={'list-group-item ' + style.item}>{book.title}
 				</li>
 			);
 		});
@@ -20,9 +22,11 @@ class BookList extends Component {
 
 	render() {
 		return (
-			<ul className="list-group col-sm-4">
-				{this.renderList()}
-			</ul>
+			<div className="col-md-4">
+				<ul className="list-group">
+					{this.renderList() }
+				</ul>
+			</div>
 		);
 	}
 }

@@ -12,7 +12,7 @@ class BookDetailContainer extends Component {
 	render() {
 		const { selectedBook } = this.props;
 		return (
-			<BookDetail book={selectedBook}/>
+			<BookDetail selectedBook={selectedBook}/>
 		);
 	}
 }
